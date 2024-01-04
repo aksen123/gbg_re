@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-
+import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -16,7 +16,31 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <header>
+          <ul>
+            <li>
+              <Link href='/'>메인</Link>
+            </li>
+            <li>
+              <Link href='/information'>이용정보</Link>
+            </li>
+            <li>
+              <Link href='/event-info'>행사</Link>
+            </li>
+            <li>
+              <Link href='/event-res'>예약</Link>
+            </li>
+            <li>
+              <Link href='/package-res'>패키지 예약</Link>
+            </li>
+            <li>
+              <Link href='/notice'>공지사항</Link>
+            </li>
+          </ul>
+        </header>
+        {children}
+        </body>
     </html>
   )
 }
