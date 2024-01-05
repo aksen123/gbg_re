@@ -26,6 +26,9 @@ const config: Config = {
       gap : {
         'normal' : '3rem'
       },
+      boxShadow : {
+        "nav" : '0 2px 2px rgba(0, 0, 0, 0.05);'
+      },
     },
   },
   plugins: [],

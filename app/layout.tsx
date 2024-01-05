@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Link from 'next/link'
+import Navigation from './Components/Navigation'
 const inter = Inter({ subsets: ['latin'] })
+
+
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,30 +17,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
-        <header>
-          <ul>
-            <li>
-              <Link href='/'>메인</Link>
-            </li>
-            <li>
-              <Link href='/information'>이용정보</Link>
-            </li>
-            <li>
-              <Link href='/event-info'>행사</Link>
-            </li>
-            <li>
-              <Link href='/event-res'>예약</Link>
-            </li>
-            <li>
-              <Link href='/package-res'>패키지 예약</Link>
-            </li>
-            <li>
-              <Link href='/notice'>공지사항</Link>
-            </li>
-          </ul>
-        </header>
+    <html lang="en" className='text-[62.5%]'>
+      <body className='text-mainText text-main-text'>
+        <Navigation />
         {children}
         </body>
     </html>
