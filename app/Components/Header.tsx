@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { useState } from "react"
 
-export default function Navigation(){
+export default function Header(){
 
   return (
     <header className="relative w-screen h-[120px] flex flex-col items-center shadow-nav">
@@ -27,7 +27,7 @@ export default function Navigation(){
       </li>
       <li className="relative group">
         <Link className="peer text-mo-sub-desc font-medium" href='/information'>이용정보</Link>
-        <ul className="block gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold  group-hover:flex hover:flex ">
+        <ul className="block gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold group-hover:flex hover:flex ">
           <li className="hover:text-main-color ease-in duration-150">경복궁 오는길</li>
           <li className="hover:text-main-color ease-in duration-150">오시는 길</li>
           <li className="hover:text-main-color ease-in duration-150">한복 규정</li>
