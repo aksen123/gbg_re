@@ -1,8 +1,10 @@
+'use client'
+
 import Link from "next/link"
 import { useState } from "react"
 
 export default function Header(){
-
+  const [view, setView] =useState(false)
   return (
     <header className="relative w-screen h-[120px] flex flex-col items-center shadow-nav">
     <div className="w-full flex justify-center shadow-nav">
@@ -27,7 +29,7 @@ export default function Header(){
       </li>
       <li className="relative group">
         <Link className="peer text-mo-sub-desc font-medium" href='/information'>이용정보</Link>
-        <ul className="block gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold group-hover:flex hover:flex ">
+        <ul className="block gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
           <li className="hover:text-main-color ease-in duration-150">경복궁 오는길</li>
           <li className="hover:text-main-color ease-in duration-150">오시는 길</li>
           <li className="hover:text-main-color ease-in duration-150">한복 규정</li>
@@ -46,9 +48,12 @@ export default function Header(){
         <Link className="text-mo-sub-desc font-medium" href='/notice'>공지사항</Link>
       </li>
     </ul>
-    {/* <div className="w-full h-[60px] bg-emerald-200 absolute -bottom-[60px]">
-      <img src="/images/00_nav_pattern.png" alt="" className="bg-main-color w-[20%] h-[100%]"/>
-    </div> */}
+    {
+    view ?  
+      <div className="w-full h-[60px] absolute -bottom-[60px]">
+        <img src="/images/00_nav_pattern.png" alt="" className="bg-main-color w-[20%] h-[100%]"/>
+      </div> : null
+    }
   </header>
   )
 }
