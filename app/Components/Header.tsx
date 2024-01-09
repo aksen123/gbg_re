@@ -5,6 +5,12 @@ import { useState } from "react"
 
 export default function Header(){
   const [view, setView] =useState(false)
+  const mouseOver = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    console.log(e.currentTarget.parentElement?.parentElement)
+    setView(true)
+  }
+
+
   return (
     <header className="relative w-screen h-[120px] flex flex-col items-center shadow-nav">
     <div className="w-full flex justify-center shadow-nav">
@@ -27,8 +33,8 @@ export default function Header(){
           <img src="/images/05_footerLogo(1).png" alt="" />
         </Link>
       </li>
-      <li className="relative group">
-        <Link className="peer text-mo-sub-desc font-medium" href='/information'>이용정보</Link>
+      <li  className="relative group">
+        <Link onMouseOver={mouseOver} className="peer text-mo-sub-desc font-medium" href='/information'>이용정보</Link>
         <ul className="block gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
           <li className="hover:text-main-color ease-in duration-150">경복궁 오는길</li>
           <li className="hover:text-main-color ease-in duration-150">오시는 길</li>
