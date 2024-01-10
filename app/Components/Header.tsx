@@ -58,17 +58,17 @@ export default function Header() {
           </Link>
           <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
             <li>
-            <Link href={'/information/story'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/information/story'} className="hover:text-main-color ease-in duration-150 font-medium">
               경복궁 이야기
             </Link>
             </li>
             <li>
-            <Link href={'/information/come'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/information/come'} className="hover:text-main-color ease-in duration-150 font-medium">
               오시는 길
             </Link>
             </li>
             <li>
-            <Link href={'/information/gbg-rule'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/information/gbg-rule'} className="hover:text-main-color ease-in duration-150 font-medium">
               한복 규정
             </Link>
             </li>
@@ -84,12 +84,12 @@ export default function Header() {
           </Link>
           <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
             <li>
-            <Link href={'/event-info?type=day'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/event-info?type=day'} className="hover:text-main-color ease-in duration-150 font-medium">
               낮의 경복궁
             </Link>
             </li>
             <li>
-            <Link href={'/event-info?type=night'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/event-info?type=night'} className="hover:text-main-color ease-in duration-150 font-medium">
               밤의 경복궁
             </Link>
             </li>
@@ -105,17 +105,17 @@ export default function Header() {
           </Link>
           <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
             <li>
-            <Link href={'/event-res'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/event-res'} className="hover:text-main-color ease-in duration-150 font-medium">
               낮 행사 예약
             </Link>
             </li>
             <li>
-            <Link href={'/event-res'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/event-res'} className="hover:text-main-color ease-in duration-150 font-medium">
               밤 행사 예약
             </Link>
             </li>
             <li>
-            <Link href={'/event-res'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/event-res'} className="hover:text-main-color ease-in duration-150 font-medium">
               예약 확인
             </Link>
             </li>
@@ -131,12 +131,12 @@ export default function Header() {
           </Link>
           <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
             <li>
-            <Link href={'/package-res'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/package-res'} className="hover:text-main-color ease-in duration-150 font-medium">
               패키지 예약 
             </Link>
             </li>
             <li>
-            <Link href={'/package-res'} className="hover:text-main-color ease-in duration-150">
+            <Link href={'/package-res'} className="hover:text-main-color ease-in duration-150 font-medium">
               예약 확인
             </Link>
             </li>
