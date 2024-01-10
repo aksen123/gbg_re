@@ -51,7 +51,7 @@ export default function Header() {
         <li className="relative">
           <Link
             onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium"
+            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
             href="/information"
           >
             이용정보
@@ -77,7 +77,7 @@ export default function Header() {
         <li className="relative">
           <Link
             onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium"
+            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
             href="/event-info"
           >
             행사
@@ -98,7 +98,7 @@ export default function Header() {
         <li className="relative">
           <Link
             onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium"
+            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
             href="/event-res"
           >
             예약
@@ -124,7 +124,7 @@ export default function Header() {
         <li className="relative">
           <Link
             onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium"
+            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
             href="/package-res"
           >
             패키지 예약
@@ -145,7 +145,7 @@ export default function Header() {
         <li className="relative">
           <Link
             onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium"
+            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
             href="/notice"
           >
             공지사항
