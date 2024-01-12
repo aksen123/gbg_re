@@ -9,7 +9,7 @@ export default function Header() {
   const showSubmenu = (e: React.MouseEvent<HTMLAnchorElement>) => {
   let ul = e.currentTarget.parentElement?.parentElement
   let list = ul?.querySelectorAll('.relative')
-  console.log(list)
+
     list?.forEach(li => li.classList.remove('group'))
     e.currentTarget.parentElement?.classList.add("group");
     setView(true);
@@ -144,7 +144,7 @@ export default function Header() {
         </li>
         <li className="relative">
           <Link
-            onMouseOver={showSubmenu}
+            
             className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
             href="/notice"
           >
@@ -153,7 +153,7 @@ export default function Header() {
         </li>
       </ul>
       {view ? (
-        <div className="w-full h-[60px] absolute -bottom-[60px]">
+        <div className="w-full h-[60px] bg-white absolute -bottom-[60px] z-40 shadow-inner">
           <img
             src="/images/00_nav_pattern.png"
             alt=""
