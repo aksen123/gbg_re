@@ -43,7 +43,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <nav className="flex gap-12 w-full max-w-[1200px] h-[80px] justify-start items-center">
+      <nav className="flex gap-12 w-full max-w-[1200px] h-[80px] justify-center items-center lg:justify-start">
         <Link href="/">
           <Image src="/images/logo.png" alt="메인 로고" width={200} height={200} />
         </Link>
