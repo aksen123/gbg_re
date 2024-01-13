@@ -17,7 +17,7 @@ const MainSlide = () => {
     setTimeout(() => {
       test(index);
     }, 5000);
-  };
+  }
   useEffect(() => {
     test(0);
   }, []);
@@ -62,7 +62,7 @@ const MainSlide = () => {
             >
               <Image
                 src={"/images/01_midNav(1).png"}
-                alt="메인페이지 네비게이션"
+                alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
                 className="w-24 relative "
@@ -77,7 +77,7 @@ const MainSlide = () => {
             >
               <Image
                 src={"/images/01_midNav(2).png"}
-                alt="메인페이지 네비게이션"
+                alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
                 className="w-24 relative "
@@ -92,7 +92,7 @@ const MainSlide = () => {
             >
               <Image
                 src={"/images/01_midNav(3).png"}
-                alt="메인페이지 네비게이션"
+                alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
                 className="w-24 relative "
@@ -107,7 +107,7 @@ const MainSlide = () => {
             >
               <Image
                 src={"/images/01_midNav(4).png"}
-                alt="메인페이지 네비게이션"
+                alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
                 className="w-24 relative "
@@ -122,7 +122,7 @@ const MainSlide = () => {
             >
               <Image
                 src={"/images/01_midNav(5).png"}
-                alt="메인페이지 네비게이션"
+                alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
                 className="w-24 relative "
@@ -137,7 +137,7 @@ const MainSlide = () => {
             >
               <Image
                 src={"/images/01_midNav(6).png"}
-                alt="메인페이지 네비게이션"
+                alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
                 className="w-24 relative "
