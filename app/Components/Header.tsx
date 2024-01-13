@@ -7,6 +7,7 @@ export default function Header() {
   const [view, setView] = useState(false);
 
   const showSubmenu = (e: React.MouseEvent<HTMLAnchorElement>) => {
+
     let ul = e.currentTarget.parentElement?.parentElement;
     let list = document.querySelectorAll(".list > li")
     // let list = ul?.querySelectorAll(".relative");
@@ -42,6 +43,7 @@ export default function Header() {
             </select>
           </li>
         </ul>
+
       </nav>
       <nav className="flex gap-12 w-full max-w-[1200px] h-[80px] justify-center items-center lg:justify-start">
         <Link href="/">
@@ -183,7 +185,7 @@ export default function Header() {
         </ul>
       </nav>
       {view ? (
-        <div className="w-full h-[60px] absolute -bottom-[60px]">
+        <div className="w-full h-[60px] bg-white absolute -bottom-[60px] z-40 shadow-inner">
           <img
             src="/images/00_nav_pattern.png"
             alt=""

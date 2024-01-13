@@ -1,10 +1,13 @@
 
 import Image from 'next/image'
+import MainSlide from './Components/MainSlide';
 
 
 export default function Home() {
 
   return (
-    <h1>main page</h1>
+    <main>
+      <MainSlide />
+    </main>
   );
 }
