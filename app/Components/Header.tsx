@@ -2,24 +2,25 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
+import Image from "next/image";
 export default function Header() {
   const [view, setView] = useState(false);
 
   const showSubmenu = (e: React.MouseEvent<HTMLAnchorElement>) => {
-  let ul = e.currentTarget.parentElement?.parentElement
-  let list = ul?.querySelectorAll('.relative')
-  console.log(list)
-    list?.forEach(li => li.classList.remove('group'))
+    let ul = e.currentTarget.parentElement?.parentElement;
+    let list = document.querySelectorAll(".list > li")
+    // let list = ul?.querySelectorAll(".relative");
+    list?.forEach((li) => li.classList.remove("group"));
     e.currentTarget.parentElement?.classList.add("group");
     setView(true);
+    console.log(list);
   };
 
   const hideSubmenu = (e: React.MouseEvent<HTMLHeadElement>) => {
     setView(false);
     let list = e.currentTarget.querySelectorAll(".list > li");
     list.forEach((li) => {
-      li.classList.remove('group')
+      li.classList.remove("group");
     });
   };
 
@@ -28,7 +29,7 @@ export default function Header() {
       onMouseLeave={hideSubmenu}
       className="relative w-screen h-[120px] flex flex-col items-center shadow-nav"
     >
-      <div className="w-full flex justify-center shadow-nav">
+      <nav className="w-full flex justify-center shadow-nav">
         <ul className="flex w-full max-w-[1200px] h-[40px] justify-end items-center gap-5 ">
           <li>트윗</li>
           <li>인스타</li>
@@ -41,117 +42,146 @@ export default function Header() {
             </select>
           </li>
         </ul>
-      </div>
-      <ul className="list flex w-full max-w-[1200px] h-[80px] justify-start items-center gap-normal ">
-        <li>
-          <Link href="/">
-            <img src="/images/05_footerLogo(1).png" alt="" />
-          </Link>
-        </li>
-        <li className="relative">
-          <Link
-            onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
-            href="/information"
-          >
-            이용정보
-          </Link>
-          <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
-            <li>
-            <Link href={'/information/story'} className="hover:text-main-color ease-in duration-150">
-              경복궁 이야기
+      </nav>
+      <nav className="flex gap-12 w-full max-w-[1200px] h-[80px] justify-start items-center">
+        <Link href="/">
+          <Image src="/images/logo.png" alt="메인 로고" width={200} height={200} />
+        </Link>
+        <ul className="list flex  items-center gap-normal ">
+          <li className="relative">
+            <Link
+              onMouseOver={showSubmenu}
+              className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
+              href="/information"
+            >
+              이용정보
             </Link>
-            </li>
-            <li>
-            <Link href={'/information/come'} className="hover:text-main-color ease-in duration-150">
-              오시는 길
+            <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
+              <li>
+                <Link
+                  href={"/information/story"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  경복궁 이야기
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/information/come"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  오시는 길
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/information/gbg-rule"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  한복 규정
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li className="relative">
+            <Link
+              onMouseOver={showSubmenu}
+              className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
+              href="/event-info"
+            >
+              행사
             </Link>
-            </li>
-            <li>
-            <Link href={'/information/gbg-rule'} className="hover:text-main-color ease-in duration-150">
-              한복 규정
+            <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
+              <li>
+                <Link
+                  href={"/event-info?type=day"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  낮의 경복궁
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/event-info?type=night"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  밤의 경복궁
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li className="relative">
+            <Link
+              onMouseOver={showSubmenu}
+              className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
+              href="/event-res"
+            >
+              예약
             </Link>
-            </li>
-          </ul>
-        </li>
-        <li className="relative">
-          <Link
-            onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
-            href="/event-info"
-          >
-            행사
-          </Link>
-          <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
-            <li>
-            <Link href={'/event-info?type=day'} className="hover:text-main-color ease-in duration-150">
-              낮의 경복궁
+            <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
+              <li>
+                <Link
+                  href={"/event-res"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  낮 행사 예약
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/event-res"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  밤 행사 예약
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/event-res"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  예약 확인
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li className="relative">
+            <Link
+              onMouseOver={showSubmenu}
+              className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
+              href="/package-res"
+            >
+              패키지 예약
             </Link>
-            </li>
-            <li>
-            <Link href={'/event-info?type=night'} className="hover:text-main-color ease-in duration-150">
-              밤의 경복궁
+            <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
+              <li>
+                <Link
+                  href={"/package-res"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  패키지 예약
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/package-res"}
+                  className="hover:text-main-color ease-in duration-150"
+                >
+                  예약 확인
+                </Link>
+              </li>
+            </ul>
+          </li>
+          <li className="relative">
+            <Link
+              className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
+              href="/notice"
+            >
+              공지사항
             </Link>
-            </li>
-          </ul>
-        </li>
-        <li className="relative">
-          <Link
-            onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
-            href="/event-res"
-          >
-            예약
-          </Link>
-          <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
-            <li>
-            <Link href={'/event-res'} className="hover:text-main-color ease-in duration-150">
-              낮 행사 예약
-            </Link>
-            </li>
-            <li>
-            <Link href={'/event-res'} className="hover:text-main-color ease-in duration-150">
-              밤 행사 예약
-            </Link>
-            </li>
-            <li>
-            <Link href={'/event-res'} className="hover:text-main-color ease-in duration-150">
-              예약 확인
-            </Link>
-            </li>
-          </ul>
-        </li>
-        <li className="relative">
-          <Link
-            onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
-            href="/package-res"
-          >
-            패키지 예약
-          </Link>
-          <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
-            <li>
-            <Link href={'/package-res'} className="hover:text-main-color ease-in duration-150">
-              패키지 예약 
-            </Link>
-            </li>
-            <li>
-            <Link href={'/package-res'} className="hover:text-main-color ease-in duration-150">
-              예약 확인
-            </Link>
-            </li>
-          </ul>
-        </li>
-        <li className="relative">
-          <Link
-            onMouseOver={showSubmenu}
-            className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
-            href="/notice"
-          >
-            공지사항
-          </Link>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </nav>
       {view ? (
         <div className="w-full h-[60px] absolute -bottom-[60px]">
           <img
