@@ -3,18 +3,18 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
+import MobileNav from "./MobileNav";
+
 export default function Header() {
   const [view, setView] = useState(false);
 
   const showSubmenu = (e: React.MouseEvent<HTMLAnchorElement>) => {
-
-    let ul = e.currentTarget.parentElement?.parentElement;
+    
     let list = document.querySelectorAll(".list > li")
-    // let list = ul?.querySelectorAll(".relative");
     list?.forEach((li) => li.classList.remove("group"));
     e.currentTarget.parentElement?.classList.add("group");
     setView(true);
-    console.log(list);
+    console.log(list)
   };
 
   const hideSubmenu = (e: React.MouseEvent<HTMLHeadElement>) => {
@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <header
       onMouseLeave={hideSubmenu}
-      className="relative w-screen h-[120px] flex flex-col items-center shadow-nav"
+      className="relative w-full h-[120px] flex flex-col items-center shadow-nav"
     >
       <nav className="w-full flex justify-center shadow-nav">
         <ul className="flex w-full max-w-[1200px] h-[40px] justify-end items-center gap-5 ">
@@ -43,13 +43,12 @@ export default function Header() {
             </select>
           </li>
         </ul>
-
       </nav>
-      <nav className="flex gap-12 w-full max-w-[1200px] h-[80px] justify-center items-center lg:justify-start">
+      <nav className="relative flex gap-12 px-5 w-full max-w-[1200px] h-[80px] justify-center items-center lg:justify-start">
         <Link href="/">
           <Image src="/images/logo.png" alt="메인 로고" width={200} height={200} />
         </Link>
-        <ul className="list flex  items-center gap-normal ">
+        <ul className="list hidden lg:flex items-center gap-normal">
           <li className="relative">
             <Link
               onMouseOver={showSubmenu}
@@ -58,7 +57,7 @@ export default function Header() {
             >
               이용정보
             </Link>
-            <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
+            <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-medium">
               <li>
                 <Link
                   href={"/information/story"}
@@ -93,7 +92,7 @@ export default function Header() {
             >
               행사
             </Link>
-            <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
+            <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-medium">
               <li>
                 <Link
                   href={"/event-info?type=day"}
@@ -120,7 +119,7 @@ export default function Header() {
             >
               예약
             </Link>
-            <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
+            <ul className="hidden group-odd:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-medium">
               <li>
                 <Link
                   href={"/event-res"}
@@ -155,7 +154,7 @@ export default function Header() {
             >
               패키지 예약
             </Link>
-            <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-semibold+">
+            <ul className="hidden group-even:flex gap-5 absolute w-screen h-[60px] -bottom-[105px] z-50 font-medium">
               <li>
                 <Link
                   href={"/package-res"}
@@ -183,6 +182,7 @@ export default function Header() {
             </Link>
           </li>
         </ul>
+        <MobileNav />
       </nav>
       {view ? (
         <div className="w-full h-[60px] bg-white absolute -bottom-[60px] z-40 shadow-inner">

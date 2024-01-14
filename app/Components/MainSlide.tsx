@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import Link from "next/link";
 const MainSlide = () => {
-  const test = (num: number) => {
+  const slide = (num: number) => {
     let images = document.querySelectorAll(".slide img");
     images.forEach((img) => {
       img.classList.remove("opacity-100");
@@ -15,15 +15,15 @@ const MainSlide = () => {
     let index = (num + 1) % images.length;
 
     setTimeout(() => {
-      test(index);
+      slide(index);
     }, 5000);
   }
   useEffect(() => {
-    test(0);
+    slide(0);
   }, []);
   return (
     <section>
-      <div className="slide relative w-screen h-[70vh]">
+      <div className="slide relative w-full h-[70vh]">
         <Image
           src={"/images/mainImg(1).png"}
           alt="경복궁 이미지"
@@ -53,8 +53,8 @@ const MainSlide = () => {
           className="opacity-0 duration-500 w-full h-full object-cover absolute"
         />
       </div>
-      <nav className="w-screen flex justify-center">
-        <ul className="w-full max-w-[1200px] flex justify-center items-center gap-36  pt-8 pb-8 shadow-nav">
+      <nav className="w-full flex justify-center">
+        <ul className="w-full max-w-[1200px] flex justify-center items-center gap-36  py-8 px-12 shadow-nav">
           <li>
             <Link
               className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:-right-1 before:opacity-80 before:scale-0 before:duration-300 hover:before:scale-100"
