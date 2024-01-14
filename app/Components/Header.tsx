@@ -13,8 +13,8 @@ export default function Header() {
     let list = document.querySelectorAll(".list > li")
     list?.forEach((li) => li.classList.remove("group"));
     e.currentTarget.parentElement?.classList.add("group");
-    setView(true);
-    console.log(list)
+    let view = e.currentTarget.innerText == '공지사항' ? false : true
+    setView(view);
   };
 
   const hideSubmenu = (e: React.MouseEvent<HTMLHeadElement>) => {
@@ -31,7 +31,7 @@ export default function Header() {
       className="relative w-full h-[120px] flex flex-col items-center shadow-nav"
     >
       <nav className="w-full flex justify-center shadow-nav">
-        <ul className="flex w-full max-w-[1200px] h-[40px] justify-end items-center gap-5 ">
+        <ul className="flex w-full max-w-[1200px] h-[40px] justify-end items-center gap-5 px-10">
           <li>트윗</li>
           <li>인스타</li>
           <li>
@@ -46,7 +46,7 @@ export default function Header() {
       </nav>
       <nav className="relative flex gap-12 px-5 w-full max-w-[1200px] h-[80px] justify-center items-center lg:justify-start">
         <Link href="/">
-          <Image src="/images/logo.png" alt="메인 로고" width={200} height={200} />
+          <Image src="/images/logo.png" alt="메인 로고" width={150} height={150} />
         </Link>
         <ul className="list hidden lg:flex items-center gap-normal">
           <li className="relative">
@@ -175,6 +175,7 @@ export default function Header() {
           </li>
           <li className="relative">
             <Link
+            onMouseOver={showSubmenu}
               className="text-mo-sub-desc font-medium relative before:absolute before:w-0 before:h-2 before:bg-main-color before:block before:bottom-0 before:opacity-80 before:duration-150 hover:before:w-full"
               href="/notice"
             >
