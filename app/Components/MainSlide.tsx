@@ -10,8 +10,8 @@ const MainSlide = () => {
       img.classList.remove("opacity-0");
       img.classList.add("opacity-0");
     });
-    images[num].classList.remove("opacity-0");
-    images[num].classList.add("opacity-100");
+    images[num]?.classList.remove("opacity-0");
+    images[num]?.classList.add("opacity-100");
     let index = (num + 1) % images.length;
 
     setTimeout(() => {
@@ -54,10 +54,10 @@ const MainSlide = () => {
         />
       </div>
       <nav className="w-full flex justify-center">
-        <ul className="w-full max-w-[1200px] flex justify-center items-center gap-36  py-8 px-12 shadow-nav">
+        <ul className="w-full max-w-[1200px] grid grid-cols-3 gap-normal py-8 px-12 shadow-nav lg:grid-cols-6">
           <li>
             <Link
-              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:-right-1 before:opacity-80 before:scale-0 before:duration-300 hover:before:scale-100"
+              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:right-14 before:opacity-80 before:scale-0 before:duration-300 lg:hover:before:scale-100"
               href={"/package-res"}
             >
               <Image
@@ -67,12 +67,12 @@ const MainSlide = () => {
                 height={60}
                 className="w-24 relative "
               />
-              <p className="font-semibold mt-5 text-center">패키지 예약</p>
+              <p className="font-semibold mt-5 text-2xl text-center">패키지 예약</p>
             </Link>
           </li>
           <li>
             <Link
-              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:-right-1 before:opacity-80 before:scale-0 before:duration-300 hover:before:scale-100"
+              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:right-14 before:opacity-80 before:scale-0 before:duration-300 lg:hover:before:scale-100"
               href={"/event-res"}
             >
               <Image
@@ -82,12 +82,12 @@ const MainSlide = () => {
                 height={60}
                 className="w-24 relative "
               />
-              <p className="font-semibold mt-5 text-center">낮 예약</p>
+              <p className="font-semibold mt-5 text-2xl text-center">낮 예약</p>
             </Link>
           </li>
           <li>
             <Link
-              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:-right-1 before:opacity-80 before:scale-0 before:duration-300 hover:before:scale-100"
+              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:right-14 before:opacity-80 before:scale-0 before:duration-300 lg:hover:before:scale-100"
               href={"/event-res"}
             >
               <Image
@@ -97,12 +97,12 @@ const MainSlide = () => {
                 height={60}
                 className="w-24 relative "
               />
-              <p className="font-semibold mt-5 text-center">밤 예약</p>
+              <p className="font-semibold mt-5 text-2xl text-center">밤 예약</p>
             </Link>
           </li>
           <li>
             <Link
-              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:-right-1 before:opacity-80 before:scale-0 before:duration-300 hover:before:scale-100"
+              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:right-14 before:opacity-80 before:scale-0 before:duration-300 lg:hover:before:scale-100"
               href={"/event-res"}
             >
               <Image
@@ -112,12 +112,12 @@ const MainSlide = () => {
                 height={60}
                 className="w-24 relative "
               />
-              <p className="font-semibold mt-5 text-center">예약 확인</p>
+              <p className="font-semibold mt-5 text-2xl text-center">예약 확인</p>
             </Link>
           </li>
           <li>
             <Link
-              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:-right-1 before:opacity-80 before:scale-0 before:duration-300 hover:before:scale-100"
+              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:right-14 before:opacity-80 before:scale-0 before:duration-300 lg:hover:before:scale-100"
               href={"/information/come"}
             >
               <Image
@@ -127,12 +127,12 @@ const MainSlide = () => {
                 height={60}
                 className="w-24 relative "
               />
-              <p className="font-semibold mt-5 text-center">오시는 길</p>
+              <p className="font-semibold mt-5 text-2xl text-center">오시는 길</p>
             </Link>
           </li>
           <li>
             <Link
-              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:-right-1 before:opacity-80 before:scale-0 before:duration-300 hover:before:scale-100"
+              className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:right-14 before:opacity-80 before:scale-0 before:duration-300 lg:hover:before:scale-100"
               href={"/notice"}
             >
               <Image
@@ -142,7 +142,7 @@ const MainSlide = () => {
                 height={60}
                 className="w-24 relative "
               />
-              <p className="font-semibold mt-5 text-center">공지사항</p>
+              <p className="font-semibold mt-5 text-2xl text-center">공지사항</p>
             </Link>
           </li>
         </ul>

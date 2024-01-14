@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Footer(){
   return (
-    <footer className="w-screen flex flex-col justify-center items-center text-[1.3rem] border-t border-gray-100 mt-72">
+    <footer className="w-full flex flex-col justify-center items-center text-[1.3rem] border-t border-gray-100 mt-72">
       <ul className="flex gap-normal mt-16">
         <li>
           <Link href='https://www.royalpalace.go.kr/'>
