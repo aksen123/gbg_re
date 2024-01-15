@@ -65,7 +65,7 @@ const MainSlide = () => {
                 alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
-                className="w-24 relative "
+                className="w-24 h-24 relative"
               />
               <p className="font-semibold mt-5 text-2xl text-center">패키지 예약</p>
             </Link>
@@ -80,7 +80,7 @@ const MainSlide = () => {
                 alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
-                className="w-24 relative "
+                className="w-24 h-24 relative"
               />
               <p className="font-semibold mt-5 text-2xl text-center">낮 예약</p>
             </Link>
@@ -95,7 +95,7 @@ const MainSlide = () => {
                 alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
-                className="w-24 relative "
+                className="w-24 h-24 relative"
               />
               <p className="font-semibold mt-5 text-2xl text-center">밤 예약</p>
             </Link>
@@ -110,7 +110,7 @@ const MainSlide = () => {
                 alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
-                className="w-24 relative "
+                className="w-24 h-24 relative"
               />
               <p className="font-semibold mt-5 text-2xl text-center">예약 확인</p>
             </Link>
@@ -125,7 +125,7 @@ const MainSlide = () => {
                 alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
-                className="w-24 relative "
+                className="w-24 h-24 relative"
               />
               <p className="font-semibold mt-5 text-2xl text-center">오시는 길</p>
             </Link>
@@ -140,7 +140,7 @@ const MainSlide = () => {
                 alt="메인페이지 내비게이션"
                 width={60}
                 height={60}
-                className="w-24 relative "
+                className="w-24 h-24 relative"
               />
               <p className="font-semibold mt-5 text-2xl text-center">공지사항</p>
             </Link>
