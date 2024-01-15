@@ -29,6 +29,13 @@ const config: Config = {
       boxShadow : {
         "nav" : '0 2px 2px rgba(0, 0, 0, 0.05);'
       },
+      backgroundImage : {
+        'title1' : "url('/images/02_title.png')",
+        'title2' : "url('/images/03_title.png')",
+        'title3' : "url('/images/04_title.png')",
+        'sun' : "url('/images/sun.png')", 
+        'moon' : "url('/images/moon.png')", 
+      }
     },
   },
   plugins: [],

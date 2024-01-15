@@ -190,7 +190,7 @@ export default function Header() {
           <img
             src="/images/00_nav_pattern.png"
             alt=""
-            className="bg-main-color w-[20%] h-[100%]"
+            className="bg-main-color w-2/12 h-full"
           />
         </div>
       ) : null}
