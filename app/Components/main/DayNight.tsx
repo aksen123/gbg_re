@@ -6,8 +6,9 @@ const DayNight = () => {
   return (
     <article className="w-screen max-w-[1200px] my-0 mx-auto flex flex-col justify-center items-center px-10">
       <Title title='경복궁 행사' intro='아름다운 경복궁을 시간대 별로 즐겨보세요!' bg="title1"/>
-      <div className="w-full flex flex-col items-center mt-28 md:flex-row">
 
+      <div className="w-full flex flex-col items-center mt-28 md:flex-row">
+    
         <div className="w-full h-[400px] text-center pt-12 text-[#355B49] relative bg-[#F5EAD7] md:w-1/2 md:h-[600px] lg:h-[700px] md:pt-36">
           <Image src={'/images/02_gbgEvent_day.png'} alt="경복궁 이미지" width={1000} height={500} className="absolute h-full left-0 bottom-0 min-[300px]:max-md:hidden"/>
           <Image src={'/images/02_gbgEvent_day_mo.png'} alt="경복궁 이미지" width={1000} height={500} className="absolute h-full left-0 bottom-0 md:hidden"/>

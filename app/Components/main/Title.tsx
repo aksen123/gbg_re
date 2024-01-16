@@ -8,7 +8,10 @@ interface Props {
 const Title = ({title, intro, bg} : Props) => {
   return (
     <>
-    <h2 className={`relative text-mo-sub-title font-semibold text-mainText mb-2 lg:text-sub-title before:absolute before:inline-block before:-top-24 before:-left-48 before:bg-cover before:bg-${bg} before:w-44 before:h-44 lg:before:w-52 lg:before:h-52 lg:before:-top-32 lg:before:-left-56`}>{title}</h2>
+    <h2 className={"relative text-mo-sub-title font-semibold text-mainText mb-2 lg:text-sub-title "}>
+      {title}
+      <div className={`absolute inline-block bg-${bg} -top-20 -left-40 bg-cover w-40 h-40 lg:w-52 lg:h-52 lg:-top-32 lg:-left-56`}></div>
+      </h2>
     <p className="text-mo-sub-desc lg:text-sub-desc">{intro}</p>
     </>
   )
