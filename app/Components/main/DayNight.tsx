@@ -5,7 +5,7 @@ import Image from "next/image"
 const DayNight = () => {
   return (
     <article className="w-screen max-w-[1200px] my-0 mx-auto flex flex-col justify-center items-center px-10">
-      <Title title='경복궁 행사' intro='아름다운 경복궁을 시간대 별로 즐겨보세요!' bg="title1"/>
+      <Title title='경복궁 행사' intro='아름다운 경복궁을 시간대 별로 즐겨보세요!' bg="/images/title1.png"/>
 
       <div className="w-full flex flex-col items-center mt-28 md:flex-row">
     
