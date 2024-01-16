@@ -31,7 +31,9 @@ const config: Config = {
       },
       backgroundImage : {
         'sun' : "url('/images/sun.png')", 
-        'moon' : "url('/images/moon.png')"
+        'moon' : "url('/images/moon.png')",
+        'day' : "url('/images/02_gbgEvent_bg_1.png')",
+        'night' : "url('/images/02_gbgEvent_bg_2.png')"
       },
     },
   },
