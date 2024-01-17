@@ -53,8 +53,8 @@ const MainSlide = () => {
           className="opacity-0 duration-500 w-full h-full object-cover absolute"
         />
       </div>
-      <nav className="w-full flex justify-center">
-        <ul className="w-full max-w-[1200px] grid grid-cols-3 gap-normal py-8 px-12 shadow-nav lg:grid-cols-6">
+      <nav className="w-full flex justify-center shadow-nav">
+        <ul className="w-full max-w-[1200px] grid grid-cols-3 gap-normal py-8 px-12  lg:grid-cols-6">
           <li>
             <Link
               className="flex flex-col items-center relative before:w-14 before:h-14 before:absolute before:rounded-full before:bg-main-color before:block before:z-50 before:-top-3 before:right-14 before:opacity-80 before:scale-0 before:duration-300 lg:hover:before:scale-100"

@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='lg:text-[62.5%] text-[55%]'>
-      <body className='text-mainText text-main-text'>
+      <body className='text-mainText text-main-text overflow-x-hidden'>
         <Header />
         {children}
         <Footer />
