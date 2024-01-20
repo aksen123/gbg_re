@@ -81,7 +81,7 @@ const Calendar = () => {
           )}
         </div>
       </div>
-      <div className="w-full h-max border border-main-color flex flex-col">
+      <div className="w-full h-max border border-main-color flex flex-col min-[1025px]:hidden">
         <div className="bg-main-color h-20 text-center text-white flex items-center justify-center">
           <span className="text-mo-sub-desc font-semibold">이달의 일정</span>
         </div>
@@ -126,12 +126,12 @@ const Calendar = () => {
             <tbody className="text-center">
               {changeCalendar(year, month).map((el, i) =>
                 i % 7 === 0 ? (
-                  <tr key={i} className="">
+                  <tr key={i + 10} className="">
                     {changeCalendar(year, month)
                       .slice(i, i + 7)
                       .map((day, idx) => (
                         <td
-                          key={day}
+                          key={idx}
                           className={`p-3 sm:p-7 font-semibold text-center ${
                             idx % 7 === 0
                               ? "text-red-600"
@@ -143,7 +143,7 @@ const Calendar = () => {
                           <Link
                             href={"#"}
                             className={`relative ${
-                              todayCheck(day)
+                              todayCheck(day as number)
                                 ? "text-white before:absolute before:bg-main-color before:rounded-full before:block before:w-16 before:h-16 before:top-1/2 before:left-1/2 before:-z-[1] before:-translate-x-1/2 before:-translate-y-1/2"
                                 : ""
                             }`}
@@ -159,16 +159,11 @@ const Calendar = () => {
           </table>
         </div>
       </div>
-      {/* <div className="w-full border border-main-color">
-        <div className="bg-main-color text-white p-5 text-3xl font-semibold">
-          <span>이달의 일정</span>
-        </div>
-      </div> */}
     </div>
   );
 };
 
-const changeCalendar = (year: number, month: number) => {
+const changeCalendar = (year: number, month: number): (string | number)[] => {
   let month_day = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   if (month == 2 && checkLeapYear(year)) month_day[1] = 29;
   let calendar_arr = [];
@@ -186,11 +181,10 @@ const changeCalendar = (year: number, month: number) => {
       calendar_arr.push("");
     }
   }
-
   return calendar_arr;
 };
 
-const checkLeapYear = (year: number) => {
+const checkLeapYear = (year: number): boolean => {
   if (year % 400) return true;
   else if (year % 100) return false;
   else if (year % 4) return true;
