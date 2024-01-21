@@ -22,32 +22,45 @@ const EventSlide = () => {
     ...dayEvent,
     ...nightEvent,
   ];
-  useEffect(() => {
-    const slide = document.querySelector(".event");
-    const test = slide?.clientWidth;
-    const itemWidth = ((test as number) - 40 * 2) / 3;
+  const slideSetting = () => {
+    const slide = document.querySelector(".event")?.clientWidth;
+    const itemWidth =
+      window.innerWidth > 1024
+        ? ((slide as number) - 40 * 2) / 3
+        : window.innerWidth > 768
+        ? ((slide as number) - 40) / 2
+        : (slide as number) - 20;
     const wrapperWidth = (itemWidth + 30) * events.length;
     setCardWidth(itemWidth);
     setSlideWidth(wrapperWidth);
     setTranslate(((itemWidth + 30) * events.length) / 3);
-    console.log(
-      "test",
-      window.innerWidth,
-      test,
-      itemWidth,
-      wrapperWidth,
-      slide?.clientWidth
-    );
+  };
+  useEffect(() => {
+    slideSetting();
+    window.addEventListener("resize", slideSetting);
+
+    return () => window.removeEventListener("resize", slideSetting);
   }, []);
 
-  console.log(translate);
   const moveSlide = (e: React.MouseEvent<HTMLButtonElement>, num: number) => {
-    console.log(window.innerWidth);
     e.preventDefault();
+    let maxCount = events.length / 3;
     let idx = slideIndex + num;
     let left = idx * (cardWidth + 30);
+
     setSlideIndex(idx);
     slideRef.current?.style.setProperty("left", `${left}px`);
+
+    if (Math.abs(idx) == Math.abs(maxCount)) {
+      setTimeout(() => {
+        slideRef.current?.classList.remove("duration-500");
+        slideRef.current?.style.setProperty("left", `0px`);
+        setSlideIndex(0);
+      }, 500);
+      setTimeout(() => {
+        slideRef.current?.classList.add("duration-500");
+      }, 600);
+    }
   };
 
   return (
@@ -66,11 +79,12 @@ const EventSlide = () => {
           ))}
         </div>
       </div>
-      <div className="w-full flex justify-center gap-40">
+      <div className="w-full flex justify-center gap-48 mt-12">
         <button
           onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             moveSlide(e, 1);
           }}
+          className="block text-4xl border-2 border-black p-3 "
         >
           ◀
         </button>
@@ -78,6 +92,7 @@ const EventSlide = () => {
           onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             moveSlide(e, -1);
           }}
+          className="block text-4xl border-2 border-black p-3"
         >
           ▶
         </button>

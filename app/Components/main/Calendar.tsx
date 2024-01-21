@@ -65,12 +65,16 @@ const Calendar = () => {
                 href="#"
                 key={i}
                 className={
-                  "font-medium text-small-text " +
+                  "font-medium text-small-text relative " +
                   `${
                     i % 7 === 0
                       ? "text-red-600"
                       : i % 7 === 6
                       ? "text-blue-600"
+                      : ""
+                  } ${
+                    todayCheck(day as number)
+                      ? "text-white before:absolute before:bg-main-color before:rounded-full before:block before:w-12 before:h-12 before:top-1/2 before:left-1/2 before:-z-[1] before:-translate-x-1/2 before:-translate-y-1/2"
                       : ""
                   }`
                 }
