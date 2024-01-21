@@ -1,5 +1,6 @@
 import Title from "./Title";
 import Calendar from "./Calendar";
+import EventSlide from "./EventSlide";
 const EventCalendar = () => {
   return (
     <article className="w-full max-w-[1200px] my-0 mx-auto flex flex-col justify-center items-center px-10">
@@ -9,6 +10,7 @@ const EventCalendar = () => {
         bg="/images/title2.png"
       />
       <Calendar />
+      <EventSlide />
     </article>
   );
 };
